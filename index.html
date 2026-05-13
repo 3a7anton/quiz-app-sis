@@ -1608,6 +1608,8 @@
     let answerDebounce = false;
     let scoresWrittenForQ = -1;
     let answeringPhaseStart = 0;
+    let lastRenderedPhase = null;
+    let lastRenderedQIdx = null;
 
     // ─── TIMING HELPERS ───────────────────────────────────────────────────────────
     function getTimings(questions) {
@@ -1733,24 +1735,32 @@
       }
       gameState = s;
       renderState();
-      if (!isHost) updateMiniLeaderboard();
     }
 
     // ─── RENDER ROUTER ───────────────────────────────────────────────────────────
     function renderState() {
       if (!gameState) return;
-      clearTimer();
 
       const phase = gameState.phase;
-      const role = isHost ? "host" : "player";
+      const qIdx = gameState.current_question_index ?? 0;
+      const phaseChanged = phase !== lastRenderedPhase || qIdx !== lastRenderedQIdx;
+
+      if (phaseChanged) {
+        clearTimer();
+        lastRenderedPhase = phase;
+        lastRenderedQIdx = qIdx;
+      }
 
       if (phase === "finished") { renderFinished(); return; }
 
-      if (role === "host") {
+      if (isHost) {
         switch (phase) {
           case "waiting": renderHostWaiting(); break;
           case "question_preview": renderHostPreview(); break;
-          case "answering": renderHostAnswering(); break;
+          case "answering":
+            if (phaseChanged) renderHostAnswering();
+            else updateAnswerCount(); // just refresh the counter, don't reset timer
+            break;
           case "reveal": renderHostReveal(); break;
           case "leaderboard": renderHostLeaderboard(); break;
         }
@@ -1758,11 +1768,16 @@
         switch (phase) {
           case "waiting": renderPlayerWaiting(); break;
           case "question_preview": renderPlayerPreview(); break;
-          case "answering": renderPlayerAnswering(); break;
+          case "answering":
+            if (phaseChanged) renderPlayerAnswering();
+            // no re-render needed for players on answer updates
+            break;
           case "reveal": renderPlayerReveal(); break;
           case "leaderboard": renderPlayerLeaderboard(); break;
         }
       }
+
+      if (!isHost) updateMiniLeaderboard();
     }
 
     // ─── HOST: WAITING ───────────────────────────────────────────────────────────
@@ -1990,7 +2005,8 @@
       disableAnswerButtons(idx);
       document.getElementById("pa-submitted").style.display = "";
 
-      const existing = gameState.answers || {};
+      const { data } = await sb.from("game_state").select("answers").eq("id", 1).single();
+      const existing = data?.answers || {};
       const updated = { ...existing, [playerName]: { answerIndex: idx, timestamp: now } };
       await updateState({ answers: updated });
       answerDebounce = false;
