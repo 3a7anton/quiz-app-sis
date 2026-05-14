@@ -2228,7 +2228,8 @@
         questions: []
       });
       customQuestions = [];
-      hasAnswered = false; myAnswerIndex = null;
+      hasAnswered = false; myAnswerIndex = null; answerDebounce = false;
+      lastRenderedPhase = null; lastRenderedQIdx = null;
       // Re-register player
       if (!isHost) registerPlayer();
     }
@@ -2377,11 +2378,13 @@
         });
       } else {
         // Remove player from game data
-        const updPlayers = { ...(gameState?.players || {}) };
+        const { data } = await sb.from("game_state")
+          .select("players, answers, leaderboard").eq("id", 1).single();
+        const updPlayers = { ...(data?.players || {}) };
         delete updPlayers[playerName];
-        const updAnswers = { ...(gameState?.answers || {}) };
+        const updAnswers = { ...(data?.answers || {}) };
         delete updAnswers[playerName];
-        const updLb = { ...(gameState?.leaderboard || {}) };
+        const updLb = { ...(data?.leaderboard || {}) };
         delete updLb[playerName];
         await updateState({ players: updPlayers, answers: updAnswers, leaderboard: updLb });
       }
