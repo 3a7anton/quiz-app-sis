@@ -1303,10 +1303,14 @@
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
             <select id="preset-bank-sel" style="flex:1;min-width:0;">
-              <option value="Grade 5 Girls">📚 Grade 5 Girls</option>
+              <option value="Grade 3 Boys">📚 Grade 3 Boys</option>
+              <option value="Grade 3 Girls">📚 Grade 3 Girls</option>
+              <option value="Grade 4 Boys">📚 Grade 4 Boys</option>
+              <option value="Grade 4 Girls">📚 Grade 4 Girls</option>
               <option value="Grade 5 Boys">📚 Grade 5 Boys</option>
-              <option value="Grade 4">📚 Grade 4</option>
-              <option value="Grade 7">📚 Grade 7</option>
+              <option value="Grade 5 Girls">📚 Grade 5 Girls</option>
+              <option value="Grade 7 Boys">📚 Grade 7 Boys</option>
+              <option value="Grade 7 Girls">📚 Grade 7 Girls</option>
             </select>
             <button class="btn btn-secondary btn-sm" id="btn-use-samples" style="width:auto;">⬇️ Load Questions</button>
           </div>
@@ -1547,6 +1551,43 @@
     const CIRCUMFERENCE = 2 * Math.PI * 34; // ≈ 213.6
 
     const PRESET_QUESTION_BANKS = {
+      "Grade 3 Boys": [
+        { question: "Which shape is used as the Start/Stop symbol in a flowchart?", options: ["Rectangle", "Diamond", "Oval or rounded rectangle", "Parallelogram"], correctAnswerIndex: 2 },
+        { question: "What is a Polygon in Scratch?", options: ["A type of sprite", "A closed figure with more than 2 sides", "A pen color", "A backdrop"], correctAnswerIndex: 1 },
+        { question: "To draw a square using the Pen in Scratch, what is the correct turning angle?", options: ["45 degrees", "60 degrees", "90 degrees", "120 degrees"], correctAnswerIndex: 2 },
+        { question: "What is the Stage in Scratch?", options: ["The area where you write code", "Where sprites move and perform actions", "The list of sounds", "The costume editor"], correctAnswerIndex: 1 },
+        { question: "What is an algorithm?", options: ["A type of computer game", "A step-by-step method of doing a work", "A Paint drawing tool", "A Scratch sprite"], correctAnswerIndex: 1 }
+      ],
+      "Grade 3 Girls": [
+        { question: "What does each symbol in a flowchart represent?", options: ["A colour", "A different purpose", "A type of pen in Paint", "A Scratch sprite"], correctAnswerIndex: 1 },
+        { question: "The Input/Output box in a flowchart looks like a:", options: ["Oval", "Rectangle", "Parallelogram", "Diamond"], correctAnswerIndex: 2 },
+        { question: "Which of these is a rule for drawing flowcharts?", options: ["A flowchart can have many starts", "Symbols do not need to be connected", "Every flowchart should have one start and one stop", "Decision boxes are optional"], correctAnswerIndex: 2 },
+        { question: "What does Transparent Selection do in Paint?", options: ["Deletes the selection", "Makes the background of the selected area transparent", "Rotates the selection", "Copies the selection"], correctAnswerIndex: 1 },
+        { question: "What does 'Flip vertical' do to an image?", options: ["Flips it left to right", "Turns it 90 degrees", "Flips it upside down", "Rotates it 180 degrees to the right"], correctAnswerIndex: 2 }
+      ],
+      "Grade 4 Boys": [
+        { question: "Slide transition has two divisions: Transition style and:", options: ["Transition color", "Transition sound", "Transition timing", "Transition design"], correctAnswerIndex: 2 },
+        { question: "In an algorithm, 'Step: Let S = A + B' is an example of:", options: ["Input", "Output", "Calculation/Processing", "Decision"], correctAnswerIndex: 2 },
+        { question: "Animations are effects applied to:", options: ["The whole presentation", "Objects on a slide", "The print layout", "The Windows button"], correctAnswerIndex: 1 },
+        { question: "Which tab contains Groups and Command Buttons?", options: ["Placeholder", "Ribbon/Tabs", "Slide", "Flowline"], correctAnswerIndex: 1 },
+        { question: "What is the aim of an algorithm/flowchart?", options: ["To make a speech", "To use complex language", "To recognize elementary steps", "To open PowerPoint"], correctAnswerIndex: 2 }
+      ],
+      "Grade 4 Girls": [
+        { question: "Which component of PowerPoint is similar to a page in a book?", options: ["Ribbon", "Slide", "Placeholder", "Object"], correctAnswerIndex: 1 },
+        { question: "To insert a new slide, which tab should you click?", options: ["Home tab", "Design tab", "Transitions tab", "View tab"], correctAnswerIndex: 0 },
+        { question: "Which flowchart symbol is used for a 'Yes/No' condition?", options: ["Processing box", "Start box", "Decision box", "Input box"], correctAnswerIndex: 2 },
+        { question: "To insert items like ClipArt or a Video, you use the:", options: ["Home tab", "Insert tab", "Transitions tab", "Design tab"], correctAnswerIndex: 1 },
+        { question: "A flowchart is a __________ representation of steps.", options: ["Mathematical", "Pictorial or diagrammatic", "Manual", "Text-only"], correctAnswerIndex: 1 }
+      ],
+      "Grade 5 Boys": [
+        { question: "What is the shortcut key to save a program for the first time in Python?", options: ["Ctrl + S", "Ctrl + V", "Ctrl + P", "Ctrl + C"], correctAnswerIndex: 0 },
+        { question: "If a=10 and b=20, what is the result of the condition (a == b)?", options: ["False", "True", "Syntax Error", "10"], correctAnswerIndex: 0 },
+        { question: "Which operator is used for exponentiation (power) in pseudocode?", options: ["^", "*", "/", "+"], correctAnswerIndex: 0 },
+        { question: "Which key is used to execute or run a Python module after saving the file?", options: ["F5", "F1", "Ctrl + R", "Alt + Enter"], correctAnswerIndex: 0 },
+        { question: "If you use a multiplication (*) symbol instead of an addition (+) by mistake in a calculation, what type of error is this?", options: ["Logical Error", "Syntax Error", "Runtime Error", "Indentation Error"], correctAnswerIndex: 0 },
+        { question: "Python is described as what type of programming language?", options: ["High-level programming language", "Low-level machine code", "A hardware description language", "An assembly language"], correctAnswerIndex: 0 },
+        { question: "What does the assignment operator 'a := 39' do in pseudocode?", options: ["Assigns a value from right to left into a variable", "Compares if two variables are equal", "Deletes the value of a variable", "Adds two numbers together"], correctAnswerIndex: 0 }
+      ],
       "Grade 5 Girls": [
         { question: "Who developed the Python Programming Language?", options: ["Tim Berners-Lee", "Wick van Rossum", "Guido van Rossum", "Rasmus Lerdorf"], correctAnswerIndex: 2 },
         { question: "If a non-zero number is divided by zero, which error will occur?", options: ["Syntax error", "Run-time error", "Logical error", "No error"], correctAnswerIndex: 1 },
@@ -1555,42 +1596,19 @@
         { question: "Which of the following is the correct variable name in Python?", options: ["2name", "my-name", "class", "my_name"], correctAnswerIndex: 3 },
         { question: "Which symbol is used for comments in Python?", options: ["//", "<>", "#", "**"], correctAnswerIndex: 2 }
       ],
-      "Grade 5 Boys": [
-        { question: "Which of the following is a strict rule for Python Keywords?", options: ["They can be used as variable names if capitalized.", "They must contain lowercase letters only.", "They must start with a numerical value.", "They are used to store user input temporarily."], correctAnswerIndex: 1 },
-        { question: "What is the result of the operation 17 % 5 in Python?", options: ["3.4", "3", "2", "0"], correctAnswerIndex: 2 },
-        { question: "Which data type is specifically used to store a group of characters enclosed in quotation marks?", options: ["Number", "String", "List", "Tuple"], correctAnswerIndex: 1 },
-        { question: "When you create a new slide, what are the 'boxes with dotted outlines' called?", options: ["Ribbon", "Placeholders", "Text Boxes", "Slide Tabs"], correctAnswerIndex: 1 },
-        { question: "In which view can you see all the slides of a presentation together on one screen?", options: ["Normal View", "Slide Sorter View", "Master View", "Design View"], correctAnswerIndex: 1 },
-        { question: "Which tab on the Ribbon would you click to add a New Slide or change font paragraph settings?", options: ["Insert Tab", "Design Tab", "Transitions Tab", "Home Tab"], correctAnswerIndex: 3 },
-        { question: "What is an 'Object' in the context of a PowerPoint slide?", options: ["The entire presentation file", "A single element such as text, a picture, or a chart", "The background color of the slide", "The button used to close the program"], correctAnswerIndex: 1 },
-        { question: "What is the smallest meaningful element in a Python program called?", options: ["Variable", "Token", "Keyword", "Function"], correctAnswerIndex: 1 },
-        { question: "Which of the following is a characteristic of Python keywords?", options: ["They can be used as variable names.", "They can contain uppercase letters.", "They contain lowercase letters only.", "They have no special meaning."], correctAnswerIndex: 2 },
-        { question: "Which type of quotation is used to span a string across multiple lines in Python?", options: ["Single quotes (')", "Double quotes (\")", "Triple quotes (''' or \"\"\")", "Square brackets ([])"], correctAnswerIndex: 2 }
+      "Grade 7 Boys": [
+        { question: "'Video Games' — what kind of software is it?", options: ["Utility Software", "Operating System", "Gaming Apps", "Application Software"], correctAnswerIndex: 3 },
+        { question: "What is the full form of WAP?", options: ["Wireless access power", "Wireless across point", "Wireless access point", "Wireless application power"], correctAnswerIndex: 2 },
+        { question: "What will be the output of:\nfor i in range(3,11,2):\n  print(i)", options: ["2,3,4,5,6,7,8,9", "3,5,7,9,11", "3,4,5,7,9,11", "3,5,7,9"], correctAnswerIndex: 3 },
+        { question: "Which function/keyword do we use in a list to skip an item after an 'if' condition?", options: ["item", "for", "continue", "while"], correctAnswerIndex: 2 },
+        { question: "If you are working with hexadecimals, what is the decimal number of C?", options: ["14", "12", "11", "15"], correctAnswerIndex: 1 }
       ],
-      "Grade 4": [
-        { question: "When you create a new slide, what are the 'boxes with dotted outlines' called?", options: ["Ribbon", "Placeholders", "Text Boxes", "Slide Tabs"], correctAnswerIndex: 1 },
-        { question: "In which view can you see all the slides of a presentation together on one screen?", options: ["Normal View", "Slide Sorter View", "Master View", "Design View"], correctAnswerIndex: 1 },
-        { question: "Which tab on the Ribbon would you click to add a New Slide or change font paragraph settings?", options: ["Insert Tab", "Design Tab", "Transitions Tab", "Home Tab"], correctAnswerIndex: 3 },
-        { question: "What is an 'Object' in the context of a PowerPoint slide?", options: ["The entire presentation file", "A single element such as text, a picture, or a chart", "The background color of the slide", "The button used to close the program"], correctAnswerIndex: 1 },
-        { question: "In a Flowchart, which symbol is used to represent a calculation like 'R = (N * 2) + 10'?", options: ["Oval box", "Diamond box", "Rectangle box", "Parallelogram"], correctAnswerIndex: 2 },
-        { question: "What does a 'Flowline' (arrow) indicate in a flowchart?", options: ["The most important step in the process", "The direction or sequence of the steps", "A place where the user must type data", "The end of the program"], correctAnswerIndex: 1 },
-        { question: "According to the rules, how many 'Start' boxes should a single flowchart have?", options: ["Zero", "Exactly one", "Two or more", "As many as there are 'Stop' boxes"], correctAnswerIndex: 1 },
-        { question: "If you need to display the final result on a screen, which flowchart symbol should you use?", options: ["Parallelogram", "Rectangle", "Diamond", "Oval"], correctAnswerIndex: 0 },
-        { question: "What is the main difference between a 'Constant' and a 'Variable'?", options: ["Constants are letters and Variables are numbers.", "Constants remain the same, while Variables do not have a fixed value.", "Variables are used in Flowcharts, but Constants are only used in Algorithms.", "There is no difference; they are two names for the same thing."], correctAnswerIndex: 1 },
-        { question: "Which command is commonly used in an algorithm to assign a value to a variable?", options: ["PRINT", "START", "LET", "INPUT"], correctAnswerIndex: 2 }
-      ],
-      "Grade 7": [
-        { question: "Which technology can reveal a person's exact location by assessing mobile network towers and GPS data?", options: ["Spyware", "Smartphone and smartwatch data", "Facial recognition", "Intercepting messages"], correctAnswerIndex: 1 },
-        { question: "Which category of software acts as the primary link between computer hardware and application programs?", options: ["Utility software", "Graphics software", "Operating system", "Web design software"], correctAnswerIndex: 2 },
-        { question: "Software used for specific maintenance tasks such as checking for viruses or defragmenting a hard disk is known as:", options: ["Application software", "Operating system", "Utility software", "Command line interface"], correctAnswerIndex: 2 },
-        { question: "What is the role of an Operating System that allows running two or more applications at the same time?", options: ["Memory management", "Multi-tasking", "Peripheral management", "Security"], correctAnswerIndex: 1 },
-        { question: "Which hardware device is responsible for connecting networks together and assigning IP addresses to connected devices?", options: ["Modem", "Switch", "Router", "Network Interface Card (NIC)"], correctAnswerIndex: 2 },
-        { question: "Which wireless technology is most appropriate for contactless payments or transferring contact details between phones at a few centimeters?", options: ["Wi-Fi", "Bluetooth", "Near-field communication (NFC)", "Ethernet"], correctAnswerIndex: 2 },
-        { question: "Bluetooth is considered ideal for which of the following scenarios?", options: ["Providing internet access to an entire school building", "Streaming audio to wireless headphones and speakers", "Connecting a home network to the Internet Service Provider", "Tracking road traffic via cameras"], correctAnswerIndex: 1 },
-        { question: "Without 'Memory Management' by the operating system, what is the most likely outcome for a computer?", options: ["The screen will turn off", "The system would quickly crash and become unusable", "The printer will stop working", "The internet speed will decrease"], correctAnswerIndex: 1 },
-        { question: "What is the base and digit range for the Octal number system?", options: ["Base 2, Range (0-1)", "Base 10, Range (0-9)", "Base 8, Range (0-7)", "Base 16, Range (0-F)"], correctAnswerIndex: 2 },
-        { question: "To convert a Hexadecimal number to Binary, which bit-weight formula is typically used for each digit?", options: ["421", "8421", "1010", "1248"], correctAnswerIndex: 1 },
-        { question: "In the provided notes, what is the binary equivalent of the decimal number 16?", options: ["1000", "1111", "10000", "10101"], correctAnswerIndex: 2 }
+      "Grade 7 Girls": [
+        { question: "'Compression' — what kind of software is it?", options: ["Operating System", "Application", "Utility", "Operating Software"], correctAnswerIndex: 2 },
+        { question: "What is the full form of NIC?", options: ["Network internet card", "Network interface care", "Network interface card", "National internet care"], correctAnswerIndex: 2 },
+        { question: "What will be the output of:\nfor i in range(2,10,2):\n  print(i)", options: ["2,3,4,5,6,7,8,9", "4,6,8,10", "2,4,6,8,9", "2,4,6,8"], correctAnswerIndex: 3 },
+        { question: "Which relational operator do we use in a list to check if items match for removal?", options: ["<=", "==", "!=", "="], correctAnswerIndex: 1 },
+        { question: "If you are working with hexadecimals, what is the decimal number of E?", options: ["15", "14", "11", "16"], correctAnswerIndex: 1 }
       ]
     };
 
