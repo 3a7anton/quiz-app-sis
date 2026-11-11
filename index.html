@@ -1492,6 +1492,12 @@
               <option value="Grade 5 Girls">📚 Grade 5 Girls</option>
               <option value="Grade 7 Boys">📚 Grade 7 Boys</option>
               <option value="Grade 7 Girls">📚 Grade 7 Girls</option>
+              <option value="Group A Boys">🏆 Group A Boys</option>
+              <option value="Group A Girls">🏆 Group A Girls</option>
+              <option value="Group B Boys">🏆 Group B Boys</option>
+              <option value="Group B Girls">🏆 Group B Girls</option>
+              <option value="Group C Boys">🏆 Group C Boys</option>
+              <option value="Group C Girls">🏆 Group C Girls</option>
             </select>
             <button class="btn btn-secondary btn-sm" id="btn-use-samples" style="width:auto;">⬇️ Load Questions</button>
           </div>
@@ -1732,6 +1738,54 @@
     const CIRCUMFERENCE = 2 * Math.PI * 34; // ≈ 213.6
 
     const PRESET_QUESTION_BANKS = {
+      "Group A Boys": [
+        { question: "Who comforted the Prophet (peace be upon him) after the first revelation and took him to Waraqah ibn Nawfal?", options: ["Khadijah", "'A'ishah", "Fatimah", "Halimah"], correctAnswerIndex: 0 },
+        { question: "Which of these are names of Sahabah?", options: ["Harun al-Rashid, Al-Mamun, Al-Mansur", "Tariq, Ibn Sina, Al-Khwarizmi", "Abu Bakr, Umar, Uthman", "Cordoba, Baghdad, Damascus"], correctAnswerIndex: 2 },
+        { question: "Which uncle of the Prophet (peace be upon him) promised to protect him as long as he lived?", options: ["Abu Lahab", "Abu Talib", "Umayyah ibn Khalaf", "'Abdullah"], correctAnswerIndex: 1 },
+        { question: "What sign did Thamud ask Salih (peace be upon him) to bring?", options: ["A river", "A she-camel from the mountain", "A moving mountain", "A shining star"], correctAnswerIndex: 1 },
+        { question: "Which of these is a sign of a hypocrite?", options: ["Breaking a promise when he makes one", "Speaking softly", "Praying on time", "Helping neighbours"], correctAnswerIndex: 0 },
+        { question: "Why did Allah forgive the sins of that woman and grant her Jannah?", options: ["She fasted every day", "She gave Zakat", "She showed kindness to a thirsty dog", "She built a masjid"], correctAnswerIndex: 2 }
+      ],
+      "Group A Girls": [
+        { question: "What happened to the woman who prayed a lot but locked up her cat and let it starve?", options: ["Allah wiped away her good actions and punished her", "She was forgiven", "She was rewarded", "Nothing happened"], correctAnswerIndex: 0 },
+        { question: "What did Khadijah (ra) say about the Prophet (peace be upon him) to comfort him after the first revelation?", options: ["He was very wealthy", "He kept good ties with his relatives and helped the poor and needy", "He was a king", "He was only a trader"], correctAnswerIndex: 1 },
+        { question: "Surah Al-Ma'idah (5:2) tells us to help each other in:", options: ["Wealth", "Sports", "Business", "Good and piety, not in sin and aggression"], correctAnswerIndex: 3 },
+        { question: "Which of these is a Fard of Wudhu?", options: ["Washing both feet including the ankles", "Brushing the teeth with a Miswak", "Saying Bismillah", "Washing the hands three times"], correctAnswerIndex: 0 },
+        { question: "How were the people of 'Aad punished?", options: ["A great flood", "An earthquake", "A strong wind for eight days and seven nights", "A fire"], correctAnswerIndex: 2 },
+        { question: "What did Khadijah (ra) say about the Prophet (peace be upon him) to comfort him after the first revelation?", options: ["He was very wealthy", "He kept good ties with his relatives and helped the poor and needy", "He was a king", "He was only a trader"], correctAnswerIndex: 1 }
+      ],
+      "Group B Boys": [
+        { question: "Emperor Akbar was known for promoting peace among all faiths. What was this policy called?", options: ["Jizya", "Mansabdar", "Sulh-i-Kul", "Zakat"], correctAnswerIndex: 2 },
+        { question: "What fine cotton fabric from Bengal was internationally famous during Mughal rule?", options: ["Denim", "Velvet", "Nylon", "Muslin (Mulmul)"], correctAnswerIndex: 3 },
+        { question: "Sir Syed Ahmad Khan founded the Muhammadan Anglo-Oriental College in 1875, now known as:", options: ["Dhaka University", "Karachi University", "Aligarh Muslim University", "Punjab University"], correctAnswerIndex: 2 },
+        { question: "The astrolabe was particularly useful for:", options: ["Astronomy and navigation", "Surgery", "Printing books", "Measuring rainfall only"], correctAnswerIndex: 0 },
+        { question: "Which combination best represents the scientific achievements of the Islamic Golden Age?", options: ["Algebra, medicine, optics, astronomy and engineering", "Only military technology", "Only literature and poetry", "Only architecture and trade"], correctAnswerIndex: 0 },
+        { question: "Which modern Arab nation sent the Hope (Al-Amal) space probe into orbit around Mars in 2021?", options: ["United Arab Emirates", "Saudi Arabia", "Kuwait", "Egypt"], correctAnswerIndex: 0 }
+      ],
+      "Group B Girls": [
+        { question: "In the global economy, the term Halal Industry includes food products as well as:", options: ["Pharmaceuticals, cosmetics, and tourism", "Petroleum refining only", "Heavy steel manufacturing", "Automotive software"], correctAnswerIndex: 0 },
+        { question: "Why is the Islamic Golden Age important to the history of world science?", options: ["It connected, developed and transmitted knowledge across civilizations.", "It stopped scientific development.", "It rejected mathematics and medicine.", "It focused exclusively on military affairs."], correctAnswerIndex: 0 },
+        { question: "The Islamic Arts Museum Malaysia (IAMM), the largest museum of Islamic arts in Southeast Asia, is situated in:", options: ["Kuala Lumpur", "Jakarta", "Singapore", "Bandar Seri Begawan"], correctAnswerIndex: 0 },
+        { question: "What is humanity's role as Khalifah on Earth?", options: ["Ruling others", "Protecting wealth", "Fulfilling Allah's commands", "Seeking fame"], correctAnswerIndex: 2 },
+        { question: "Why did the Muslims lose their advantage at Uhud?", options: ["Lack of food", "Archers left their positions", "No leader", "Lack of weapons"], correctAnswerIndex: 1 },
+        { question: "Which Muslim engineer is famous for designing water-powered clocks and automata?", options: ["Ibn Firnas", "Al-Farabi", "Ibn Rushd", "Al-Jazari"], correctAnswerIndex: 3 }
+      ],
+      "Group C Boys": [
+        { question: "Which Sufi saint spread kindness and harmony in Delhi during Sultanate times?", options: ["Shah Jalal", "Lal Shahbaz", "Hazrat Nizamuddin Auliya", "Data Ganj Bakhsh"], correctAnswerIndex: 2 },
+        { question: "Which Bengal Sultan, famous for patronizing literature, exchanged poetry with the Persian poet Hafez?", options: ["Humayun", "Ghiyasuddin Azam Shah", "Tipu Sultan", "Nizam-ul-Mulk"], correctAnswerIndex: 1 },
+        { question: "Bayt al-Hikmah is commonly translated into English as the:", options: ["House of Trade", "House of Wisdom", "House of Medicine", "House of Astronomy"], correctAnswerIndex: 1 },
+        { question: "Which scholar logged over 73,000 miles across Africa, the Middle East, and Asia during his 30-year travels in the 14th century?", options: ["Marco Polo", "Ibn Battuta", "Zheng He", "Ibn Jubayr"], correctAnswerIndex: 1 },
+        { question: "One important contribution of Islamic civilization to world knowledge was:", options: ["Rejecting all earlier knowledge", "Preserving, developing and transmitting scientific knowledge", "Ending mathematical studies", "Discouraging observation"], correctAnswerIndex: 1 },
+        { question: "What made 10th-century Cordoba (in Muslim Spain) famous throughout Europe and the Mediterranean?", options: ["Paved roads, street lamps, and massive libraries", "Military fortresses only", "Discovery of steam engines", "Massive gold mines"], correctAnswerIndex: 0 }
+      ],
+      "Group C Girls": [
+        { question: "Which famous medical work was written by Ibn Sina?", options: ["The Canon of Medicine", "The Book of Optics", "The Book of Algebra", "The Book of Maps"], correctAnswerIndex: 0 },
+        { question: "The University of al-Qarawiyyin, recognized by UNESCO as the oldest continuously operating university in the world, is located in:", options: ["Cairo, Egypt", "Fez, Morocco", "Damascus, Syria", "Baghdad, Iraq"], correctAnswerIndex: 1 },
+        { question: "Which Abbasid caliph is particularly associated with the development of Baghdad as a major center of learning and the House of Wisdom?", options: ["Harun al-Rashid", "Al-Ma'mun", "Umar ibn Abd al-Aziz", "Salahuddin Ayyubi"], correctAnswerIndex: 0 },
+        { question: "Al-Jazari's 13th-century engineering manuscript Book of Knowledge of Ingenious Mechanical Devices included detailed designs for:", options: ["Crankshaft mechanisms and water-powered clocks", "Printing presses", "Steam locomotives", "Hot air balloons"], correctAnswerIndex: 0 },
+        { question: "Mariam al-Ijliyya (Al-Asturlabiya) was an eminent 10th-century female scholar famous for crafting:", options: ["Precision astrolabes", "Surgical instruments", "Architectural blueprints", "Chemical glass flasks"], correctAnswerIndex: 0 },
+        { question: "The Islamic Agricultural Revolution introduced widespread food security across the Mediterranean primarily through:", options: ["Advanced irrigation (Norias and Qanats)", "Chemical fertilizers", "Hydroponic farming", "Tractor automation"], correctAnswerIndex: 0 }
+      ],
       "Grade 3 Boys": [
         { question: "Which shape is used as the Start/Stop symbol in a flowchart?", options: ["Rectangle", "Diamond", "Oval or rounded rectangle", "Parallelogram"], correctAnswerIndex: 2 },
         { question: "What is a Polygon in Scratch?", options: ["A type of sprite", "A closed figure with more than 2 sides", "A pen color", "A backdrop"], correctAnswerIndex: 1 },
